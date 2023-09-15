@@ -9,8 +9,20 @@ router.post("/createURL", async (req,res) => {
       console.log("creating url");
       console.log("get url id ");  
   
-    const id = shortid.generate(); // Generate a short ID
-    console.log(id);
+  function generateShortId(length) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  const charactersLength = characters.length;
+  
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+  return result;
+}
+
+const id = generateShortId(7); // Generate a custom short ID
+console.log('Generated ID:', id);
       // const url = await getURL({ urlID: id });
       // console.log(url)
       // if(!url){
