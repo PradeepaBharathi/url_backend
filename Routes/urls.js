@@ -28,7 +28,7 @@ router.post("/createURL", async (req,res) => {
     }
   })
 
-  //get all URL for an user
+
   router.post("/all", async (req,res) => {
     try{
       console.log("get all url"); 
@@ -50,7 +50,7 @@ router.post("/createURL", async (req,res) => {
     }
   })
 
-  //get today URL and count
+  
   router.post("/today", async (req,res) => {
     console.log("get all url today"); 
       // console.log(req.body);
@@ -72,7 +72,7 @@ router.post("/createURL", async (req,res) => {
     }
   })
 
-  //get current month URL and count
+
   router.post("/monthly", async (req,res) => {
     console.log("get all url this month"); 
       // console.log(req.body);
@@ -91,7 +91,6 @@ router.post("/createURL", async (req,res) => {
     }
   })
 
-  //update no of clicks for an URL
   router.post("/clickcount", async (req,res) => {
     console.log("update click count"); 
       // console.log(req.body);
