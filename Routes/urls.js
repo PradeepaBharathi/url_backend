@@ -8,27 +8,14 @@ router.post("/createURL", async (req,res) => {
     try{
       console.log("creating url");
       console.log("get url id ");  
-         const id = Math.random().toString(36).substring(2,9);
-
-      // using loop to shorten a long url
-      const longURL =req.body.longURL;
-        function generateShortURL(length) {
-        let result = ' ';
-        const charactersLength = longURL.length;
-        for ( let i = 0; i < length; i++ ) {
-          result += longURL.charAt(Math.floor(Math.random() * charactersLength));
-        }
-        return result;
-        }
-      const nid = generateShortURL(7);
-      console.log(shortURL);
-      // const id = nanoid(7);
+      
+      const id = nanoid(7);
       console.log(id)
-      const url = await getURL({urlID:nid});
+      const url = await getURL({urlID:id});
       if(url){
         return res.status(404).json({message:"Try again"})
       }
-      const shortURL = `/${nid}`
+      const shortURL = `/${id}`
       const data = {...req.body, shortURL:shortURL, urlID:id, clicked:0}
       const result = await addURL(data) 
       if(!result.acknowledged){
