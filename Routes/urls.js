@@ -9,8 +9,8 @@ router.post("/createURL", async (req,res) => {
       console.log("creating url");
       console.log("get url id ");  
   
-      const id = nanoid(7);
-      console.log(id)
+    const id = shortid.generate(); // Generate a short ID
+    console.log(id);
       // const url = await getURL({ urlID: id });
       // console.log(url)
       // if(!url){
