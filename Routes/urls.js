@@ -8,8 +8,8 @@ router.post("/createURL", async (req,res) => {
     try{
       console.log("creating url");
       console.log("get url id ");  
-      
-      const id = nanoid(7);
+  
+      const id = nanoid();
       console.log(id)
       const url = await getURL({urlID:id});
       if(url){
