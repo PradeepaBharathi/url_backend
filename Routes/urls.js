@@ -16,7 +16,7 @@ router.post("/createURL", async (req,res) => {
       // if(!url){
       //   return res.status(404).json({message:"Try again"})
       // }
-      const shortURL = `/${id}`
+      const shortURL = '/' + id;
       const data = { ...req.body, shortURL: shortURL, urlID: id, clicked: 0 }
       console.log(data)
       const result = await addURL(data) 
