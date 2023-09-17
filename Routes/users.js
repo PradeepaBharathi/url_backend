@@ -71,7 +71,7 @@ router.post("/signup", async (req, res) => {
         const token = generateActivationToken(hashedUser._id, secret); 
         
         // const link = `http://localhost:3000/activate/${hashedUser._id}?activateToken=${token}`;
-        const link = `https://cool-puppy-de5ee6.netlify.app/activate/${hashedUser._id}?activateToken=${token}`;
+         const link = `https://cool-puppy-de5ee6.netlify.app/activate/${hashedUser._id}?activateToken=${token}`;
         const mailOptions = {
           from: 'resetpass634@gmail.com',
           to: hashedUser.email,
@@ -212,8 +212,7 @@ router.post("/forgot-password", async(req, res) => {
         const token = generateToken(user._id, secret); 
         
         // const link = `http://localhost:3000/authorize/?id=${user._id}&token=${token}`;
-      const link = `https://cool-puppy-de5ee6.netlify.app/authorize/?id=${user._id}&token=${token}`;
-  
+         const link = `https://cool-puppy-de5ee6.netlify.app/authorize/?id=${user._id}&token=${token}`;
 
         const mailOptions = {
           from: 'resetpass634@gmail.com',
